@@ -1,10 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "TUIOReceiverComponent.h"
-#include "TuioContainer.h"
-
-#include <sstream>
+#include "TuioReceiverComponent.h"
+#include "TuioContainerStruct.h"
 
 using namespace TUIO;
 
@@ -16,7 +14,7 @@ UTUIOReceiverComponent::UTUIOReceiverComponent()
 	// off to improve performance if you 't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-	listener.setDispatcher(std::bind(&UTUIOReceiverComponent::DispatchMainThread, this));
+	listener.setDispatcher(std::bind(&UTUIOReceiverComponent::DispatchMainThread, this, std::placeholders::_1, std::placeholders::_2));
 }
 
 // Called when the game starts
@@ -47,7 +45,7 @@ void UTUIOReceiverComponent::EndPlay(EEndPlayReason::Type reason)
 
 void UTUIOReceiverComponent::DispatchMainThread(EEventType type, TUIO::TuioContainer* evt)
 {
-	FTuioContainer cont(*evt);
+	FTuioContainerStruct cont(*evt);
 	AsyncTask(ENamedThreads::GameThread, [type, cont, this]()
 	{
 			switch (type)

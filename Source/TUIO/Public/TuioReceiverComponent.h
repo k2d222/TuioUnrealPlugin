@@ -12,10 +12,11 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "TUIOReceiverComponent.generated.h"
+#include "TuioContainerStruct.h"
+#include "TuioReceiverComponent.generated.h"
 
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FTuioEvent, FTuioContainer, Data);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FTuioEvent, FTuioContainerStruct, Data);
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class TUIO_API UTUIOReceiverComponent : public UActorComponent
