@@ -1,0 +1,10 @@
+/.vs
+/.vscode
+/Binaries
+/Content
+/DerivedDataCache
+/Intermediate
+/Saved
+/Plugins/*/Content
+/Plugins/*/Intermediate
+/compile_commands.json
