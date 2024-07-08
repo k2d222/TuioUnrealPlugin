@@ -24,20 +24,6 @@ void FTUIOModule::StartupModule()
 {
 
 	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
-	//OscReceiver* osc_receiver;
-	//if (_udp) osc_receiver = new UdpReceiver(_port);
-	//else {
-	//	if (_address == "incoming") osc_receiver = new TcpReceiver(_port);
-	//	else osc_receiver = new TcpReceiver(_address.c_str(), _port);
-	//}
-	//TuioDump dump;
-	//TuioClient client(osc_receiver);
-	//client.addTuioListener(&dump);
-	//client.connect(true);
-
-	//delete osc_receiver;
-
-	//FMessageDialog::Open(EAppMsgType::Ok, LOCTEXT("ThirdPartyLibraryError", "Failed to load example third party library"));
 }
 
 void FTUIOModule::ShutdownModule()

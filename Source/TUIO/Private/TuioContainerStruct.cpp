@@ -6,4 +6,5 @@ FTuioContainerStruct::FTuioContainerStruct(const TUIO::TuioContainer& source)
     , Speed(source.getXSpeed(), source.getYSpeed())
     , SessionID(source.getSessionID())
     , SourceID(source.getTuioSourceID())
+    , Timestamp(source.getTuioTime().getTotalMilliseconds() / 1000.0)
 { }
